@@ -1,4 +1,4 @@
-# alterself
+# alterself v1.0
 
 A clean, Pythonic Discord selfbot library built from scratch.  
 Full browser fingerprint spoofing — headers, gateway identify, super-properties, sec-ch-ua, locale/timezone — all coherent, session-stable, and indistinguishable from a real Chrome client.
