@@ -3,11 +3,7 @@
 ## Install
 
 ```bash
-pip install alterself
-# or from source
-git clone https://github.com/you/alterself
-cd alterself
-pip install -e .
+pip install git+https://github.com/umqu/alterself.git
 ```
 
 ## Your first bot
