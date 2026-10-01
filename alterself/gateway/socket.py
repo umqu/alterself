@@ -26,8 +26,12 @@ GATEWAY_URL = "wss://gateway.discord.gg/?encoding=json&v=9&compress=zlib-stream"
 ZLIB_SUFFIX = b"\x00\x00\xff\xff"
 
                                                            
-import websockets.version as _wv
-_WS_MAJOR = int(_wv.version.split(".")[0])
+try:
+    import websockets.version as _wv
+    _WS_MAJOR = int(_wv.version.split(".")[0])
+except Exception:
+    _WS_MAJOR = 13
+
 _WS_HEADER_KW = "extra_headers" if _WS_MAJOR >= 12 else "additional_headers"
 
 
