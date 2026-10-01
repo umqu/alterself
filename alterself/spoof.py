@@ -214,15 +214,16 @@ class SpoofEngine:
         h.update(self._common(referer))
         return h
 
-    def get_ws_headers(self) -> Dict[str, str]:
-        return {
-            "User-Agent":      self.profile.user_agent,
-            "Accept-Language": self._accept_language(),
-            "Accept-Encoding": "gzip, deflate, br, zstd",
-            "Origin":          "https://discord.com",
-            "Pragma":          "no-cache",
-            "Cache-Control":   "no-cache",
-        }
+    def get_ws_headers(self) -> list[tuple[str, str]]:
+        p = self.profile
+        return [
+            ("User-Agent",      p.user_agent),
+            ("Accept-Language", self._accept_language()),
+            ("Accept-Encoding", "gzip, deflate, br, zstd"),
+            ("Origin",          "https://discord.com"),
+            ("Pragma",          "no-cache"),
+            ("Cache-Control",   "no-cache"),
+        ]
 
     def get_identify_props(self) -> Dict[str, Any]:
         p = self.profile
